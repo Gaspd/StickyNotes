@@ -1,0 +1,31 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             Height="25" MinWidth="150"
+             x:Class="StickyNotes.Controls.SearchBox" Background="LightGray" HorizontalContentAlignment="Stretch">
+  <DockPanel>
+    <DockPanel.Styles>
+      <Style Selector=":is(ContentControl) :is(TemplatedControl)">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+      </Style>
+      <Style Selector="DockPanel > Button">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Width" Value="25"/>
+      </Style>
+    </DockPanel.Styles>
+    <TextBox Watermark="Search..." Background="Red" />
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Background="Aqua">
+      <Button>
+        <DrawingPresenter Width="16" Height="16" Drawing="{DynamicResource BoxIcons.RegularX}"/>
+      </Button>
+      <Button>
+        <DrawingPresenter Width="16" Height="16" Drawing="{DynamicResource BoxIcons.RegularSearchAlt}"/>
+      </Button>
+    </StackPanel>
+  </DockPanel>
+</UserControl>

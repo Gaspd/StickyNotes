@@ -2,7 +2,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:StickyNotes.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="StickyNotes.Views.NoteListView">
-    Welcome to Avalonia!
+             x:Class="StickyNotes.Views.NoteListView" BorderBrush="Black" BorderThickness="1">
+  <DockPanel>
+    <controls:SearchBox Height="25" HorizontalAlignment="Stretch" Background="Red" DockPanel.Dock="Top"/>
+    <Button DockPanel.Dock="Top" BorderThickness="0" Height="25">
+      <StackPanel Orientation="Horizontal">
+        <DrawingPresenter Width="16" Height="16" Drawing="{DynamicResource BoxIcons.RegularPlus}"/>
+        <TextBlock Text="Add Note..."/>
+      </StackPanel>
+    </Button>
+    <StackPanel Margin="5,5,5,5">
+      <StackPanel.Styles>
+        <Style Selector="TextBlock">
+          <Setter Property="Margin" Value="5,5,5,5"/>
+          <Setter Property="MaxHeight" Value="80"/>
+        </Style>
+      </StackPanel.Styles>
+        <TextBlock TextWrapping="Wrap">1: test test test test test test test test test test test test test
+2: test test
+3: test test
+4: test test
+5: test test
+6: test test
+7: test test
+        </TextBlock>
+      </StackPanel>
+  </DockPanel>
 </UserControl>
